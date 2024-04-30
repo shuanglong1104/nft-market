@@ -1,5 +1,5 @@
 import { provider } from './provider'
-import { parseAbiItem } from 'viem'
+import { parseAbiItem,formatUnits } from 'viem'
 
 /**
 使用 Viem 编写 ts 脚本查询Ethereum链上最近100个区块链内的 USDC Transfer记录，要求如下：
@@ -11,32 +11,6 @@ import { parseAbiItem } from 'viem'
 
 // USDC合约地址（Ethereum主网）
 const usdcAddress = '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48';
-
-/**
- * 保留小数位后5位
- * @param bigint
- * @returns 
- */
-function divideBigInt(bigint: bigint): string {
-    const divisor = BigInt(100000);
-    const decimalPlaces = 5;
-    // 计算整数部分
-    const integerPart = bigint / divisor;
-    // 计算余数部分
-    const remainder = bigint % divisor;
-
-    // 将余数转换为字符串，并确保它足够长（通过前面补零），以代表小数部分
-    let remainderStr = remainder.toString();
-    while (remainderStr.length < decimalPlaces) {
-        remainderStr = '0' + remainderStr;
-    }
-
-    // 取所需的小数位数
-    remainderStr = remainderStr.substring(0, decimalPlaces);
-
-    // 返回整数部分和小数部分的组合
-    return `${integerPart}.${remainderStr}`;
-}
 
 /**
  * 查询最近100个区块内的USDC转账记录
@@ -59,7 +33,7 @@ async function print100Block() {
     const logs = await provider.getFilterLogs({filter});
 
     logs.forEach((log) => {
-        console.log(`从 ${log.args.from} 转账给 ${log.args.to} ${divideBigInt(log.args.value!)} USDC ,交易ID：${log.transactionHash}`);
+        console.log(`从 ${log.args.from} 转账给 ${log.args.to} ${formatUnits(log.args.value!,6)} USDC ,交易ID：${log.transactionHash}`);
     });
 }
 
