@@ -1,0 +1,82 @@
+LOONG@LOONG-Mac:~/Workspaces/solidity/nft-market|W3D1⚡ 
+⇒  cd mytokendb              
+LOONG@LOONG-Mac:~/Workspaces/solidity/nft-market/mytokendb|W3D1⚡ 
+⇒  graph auth --studio 8885762b7828e0a5575eb3d641416a93
+ ›   Warning: In next major version, this flag will be removed. By default we will deploy to the Graph Studio. Learn more about Sunrise of Decentralized 
+ ›   Data https://thegraph.com/blog/unveiling-updated-sunrise-decentralized-data/
+Deploy key set for https://api.studio.thegraph.com/deploy/
+LOONG@LOONG-Mac:~/Workspaces/solidity/nft-market/mytokendb|W3D1⚡ 
+⇒  graph codegen && graph build
+  Skip migration: Bump mapping apiVersion from 0.0.1 to 0.0.2
+  Skip migration: Bump mapping apiVersion from 0.0.2 to 0.0.3
+  Skip migration: Bump mapping apiVersion from 0.0.3 to 0.0.4
+  Skip migration: Bump mapping apiVersion from 0.0.4 to 0.0.5
+  Skip migration: Bump mapping apiVersion from 0.0.5 to 0.0.6
+  Skip migration: Bump manifest specVersion from 0.0.1 to 0.0.2
+  Skip migration: Bump manifest specVersion from 0.0.2 to 0.0.4
+✔ Apply migrations
+✔ Load subgraph from subgraph.yaml
+  Load contract ABI from abis/MyToken.json
+✔ Load contract ABIs
+  Generate types for contract ABI: MyToken (abis/MyToken.json)
+  Write types to generated/MyToken/MyToken.ts
+✔ Generate types for contract ABIs
+✔ Generate types for data source templates
+✔ Load data source template ABIs
+✔ Generate types for data source template ABIs
+✔ Load GraphQL schema from schema.graphql
+  Write types to generated/schema.ts
+✔ Generate types for GraphQL schema
+
+Types generated successfully
+
+  Skip migration: Bump mapping apiVersion from 0.0.1 to 0.0.2
+  Skip migration: Bump mapping apiVersion from 0.0.2 to 0.0.3
+  Skip migration: Bump mapping apiVersion from 0.0.3 to 0.0.4
+  Skip migration: Bump mapping apiVersion from 0.0.4 to 0.0.5
+  Skip migration: Bump mapping apiVersion from 0.0.5 to 0.0.6
+  Skip migration: Bump manifest specVersion from 0.0.1 to 0.0.2
+  Skip migration: Bump manifest specVersion from 0.0.2 to 0.0.4
+✔ Apply migrations
+✔ Load subgraph from subgraph.yaml
+  Compile data source: MyToken => build/MyToken/MyToken.wasm
+✔ Compile subgraph
+  Copy schema file build/schema.graphql
+  Write subgraph file build/MyToken/abis/MyToken.json
+  Write subgraph manifest build/subgraph.yaml
+✔ Write compiled subgraph to build/
+
+Build completed: build/subgraph.yaml
+
+LOONG@LOONG-Mac:~/Workspaces/solidity/nft-market/mytokendb|W3D1⚡ 
+⇒  graph deploy --studio mytokendb
+Which version label to use? (e.g. "v0.0.1"): v0
+  Skip migration: Bump mapping apiVersion from 0.0.1 to 0.0.2
+  Skip migration: Bump mapping apiVersion from 0.0.2 to 0.0.3
+  Skip migration: Bump mapping apiVersion from 0.0.3 to 0.0.4
+  Skip migration: Bump mapping apiVersion from 0.0.4 to 0.0.5
+  Skip migration: Bump mapping apiVersion from 0.0.5 to 0.0.6
+  Skip migration: Bump manifest specVersion from 0.0.1 to 0.0.2
+  Skip migration: Bump manifest specVersion from 0.0.2 to 0.0.4
+✔ Apply migrations
+✔ Load subgraph from subgraph.yaml
+  Compile data source: MyToken => build/MyToken/MyToken.wasm
+✔ Compile subgraph
+  Copy schema file build/schema.graphql
+  Write subgraph file build/MyToken/abis/MyToken.json
+  Write subgraph manifest build/subgraph.yaml
+✔ Write compiled subgraph to build/
+  Add file to IPFS build/schema.graphql
+                .. QmZv5PwfaCWqc8YBTsDTeWAy6tk7Z8BmBXuCbM2jfxogyJ
+  Add file to IPFS build/MyToken/abis/MyToken.json
+                .. QmbK5Ebr4RCp75bvHJFBCos2GkhLaGAcdfKTGRyMye2WgQ
+  Add file to IPFS build/MyToken/MyToken.wasm
+                .. QmPajoNyThAVFy5BpfAP61sPTPmvk11DVkv5MnkAjucMXy
+✔ Upload subgraph to IPFS
+
+Build completed: QmV39dM9ugBkgEvfJ4YbzBv6KWJZiTksrJmiiQDY3LNNV5
+
+Deployed to https://thegraph.com/studio/subgraph/mytokendb
+
+Subgraph endpoints:
+Queries (HTTP):     https://api.studio.thegraph.com/query/73457/mytokendb/v0
