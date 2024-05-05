@@ -1,0 +1,1 @@
+https://api.studio.thegraph.com/query/73457/nftfactory/v0.1

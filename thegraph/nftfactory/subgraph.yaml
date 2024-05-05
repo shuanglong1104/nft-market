@@ -30,3 +30,27 @@ dataSources:
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
       file: ./src/nft-factory.ts
+
+templates:
+  - kind: ethereum/contract
+    name: S2NFT
+    network: sepolia
+    source:
+      abi: S2NFT
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - TokenInfo
+      abis:
+        - name: S2NFT
+          file: ./abis/S2NFT.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/s2nft.ts
+  # - Approval(indexed address,indexed address,indexed uint256)
+  # - ApprovalForAll(indexed address,indexed address,bool)
+  # - Transfer(indexed address,indexed address,indexed uint256)
+        
