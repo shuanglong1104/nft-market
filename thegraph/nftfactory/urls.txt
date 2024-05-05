@@ -1,1 +1,15 @@
-https://api.studio.thegraph.com/query/73457/nftfactory/v0.1
+https://api.studio.thegraph.com/query/73457/nftfactory/v0.2
+
+query MyQuery {
+  tokenInfos {
+    id
+    ca
+    name
+    owner
+    tokenId
+    tokenURL
+    transactionHash
+    blockNumber
+    blockTimestamp
+  }
+}
