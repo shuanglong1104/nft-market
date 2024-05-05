@@ -1,4 +1,3 @@
-import { BigInt } from "@graphprotocol/graph-ts";
 import { Transfer, S2NFT } from "../generated/templates/S2NFT/S2NFT";
 import { TokenInfo } from "../generated/schema";
 
