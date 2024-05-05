@@ -1,4 +1,4 @@
-https://api.studio.thegraph.com/query/73457/nftfactory/v0.2
+https://api.studio.thegraph.com/query/73457/nftfactory/v0.3
 
 query MyQuery {
   tokenInfos {

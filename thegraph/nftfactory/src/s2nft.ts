@@ -13,14 +13,11 @@ export function handleTransfer(event: Transfer): void {
     token.tokenId = event.params.tokenId;
     token.tokenURL = contract_s2nft.tokenURI(event.params.tokenId);
     token.name = contract_s2nft.name();
-    token.owner = event.params.to;
-    token.blockNumber = event.block.number;
-    token.blockTimestamp = event.block.timestamp;
-    token.transactionHash = event.transaction.hash;
-
-  } else {
-    token.owner = event.params.to;
   }
+  token.owner = event.params.to;
+  token.blockNumber = event.block.number;
+  token.blockTimestamp = event.block.timestamp;
+  token.transactionHash = event.transaction.hash;
 
   token.save();
 }
